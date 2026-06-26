@@ -8,7 +8,7 @@ import torch
 import torch.nn.functional as F
 import librosa
 from scipy.signal import butter, filtfilt
-from kymatio.torch import Scattering1D
+from kymatio.scattering1d.frontend.torch_frontend import ScatteringTorch1D as Scattering1D
 from gammatone.gtgram import gtgram
 
 from model import DroneFullModel

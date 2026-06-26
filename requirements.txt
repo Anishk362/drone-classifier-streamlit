@@ -1,9 +1,8 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
 streamlit
-torch==2.2.2+cpu
-numpy<2.0.0
-scipy<1.14
-numba>=0.58.0
+torch==2.12.1+cpu
+numpy
+scipy
 librosa
 kymatio
 gammatone
