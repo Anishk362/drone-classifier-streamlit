@@ -1,23 +1,23 @@
-# Drone Acoustic Classifier — Streamlit App
+# 🛸 Acoustic Drone Detection & Classification v2
 
-Real-time 4-class drone audio classification using a Dual-Feature Cross-Attention Deep Learning Pipeline.
+Multi-label drone classifier using **Multi-Scale Wavelet Scattering Transform (MS-WST)** and **Gammatone spectrograms** with cross-attention fusion.
 
-## Classes
-- **Class 0**: Background (No Drone)
-- **Class 1**: DJI Mavic Mini
-- **Class 2**: DJI Mavic 3 Cine
-- **Class 3**: Agricultural Drone
+## Features
+- **Multi-label detection** — identifies 0, 1, 2, or 3 drone types simultaneously
+- **3 drone classes**: DJI Mavic Mini, DJI Mavic 3 Cine, Agricultural Drone
+- Dual-branch architecture with Scaled Dot-product Cross-Attention (SDCAM)
+- Real-time audio classification via Streamlit web interface
+- Interactive visualizations (waveform, MS-WST, Gammatone spectrogram)
 
 ## Architecture
-- Multi-Scale Wavelet Scattering Transform (MS-WST) + Gammatone Filterbank
-- Bidirectional Cross-Attention (SDCAM)
-- 98.06% accuracy on IIT Jammu custom dataset
+1. **MS-WST Branch**: 4-scale wavelet scattering (Kymatio) → Conv1D decoder
+2. **Gammatone Branch**: 64-channel filterbank spectrogram → Conv1D decoder  
+3. **Fusion**: Cross-attention between branches → statistical pooling → MLP classifier
+4. **Output**: Sigmoid activation for independent per-class detection
 
-## Setup
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+## Usage
+Upload a WAV/MP3/FLAC/OGG audio file and the model will classify which drone(s) are present.
 
-## Author
-Anish Kalra | 24MC3006 | IIT Jammu Research Internship 2025
+## Tech Stack
+- PyTorch, Kymatio, Gammatone, Librosa
+- Streamlit for the web interface
