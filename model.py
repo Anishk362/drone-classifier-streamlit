@@ -79,7 +79,7 @@ class DroneEmbeddingNet(nn.Module):
 
 class DroneFullModel(nn.Module):
     """
-    Full drone classifier model (v2 — multi-label, 3-class).
+    Full drone classifier model (v2 - multi-label, 3-class).
 
     Combines the dual-branch embedding network with a classification head.
     Default num_classes=3 for multi-label drone detection.
