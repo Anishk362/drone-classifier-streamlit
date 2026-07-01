@@ -21,7 +21,7 @@ from model import DroneFullModel
 # ── Constants ──────────────────────────────────────────────────────────────────
 
 DRONE_NAMES = {0: "DJI Mavic Mini", 1: "DJI Mavic 3 Cine", 2: "Agricultural Drone"}
-DETECTION_THRESHOLD = 0.60
+DETECTION_THRESHOLD = 0.65
 
 SR = 16000
 FRAME_LEN_MS = 100
